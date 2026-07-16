@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #7b1e1e;
+  --color-maroon-dark: #5a1414;
+  --color-maroon-deep: #3d0e0e;
+  --color-maroon-light: #9a2b2b;
+  --color-gold: #d4af37;
+  --color-gold-light: #e8ce7a;
+  --color-gold-soft: #f6ecd0;
+  --color-cream: #faf6ef;
+  --color-charcoal: #221c1c;
+  --color-warmorange: #e07b39;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-maroon);
+  color: var(--color-gold-light);
+}
+
+/* Elegant thin scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ece3;
+}
+::-webkit-scrollbar-thumb {
+  background: #7b1e1e;
+  border-radius: 8px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(120deg, #d4af37 0%, #f3e5ab 45%, #d4af37 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
