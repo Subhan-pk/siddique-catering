@@ -25,7 +25,7 @@ const SECTIONS = [
   },
   {
     h: "Contact",
-    p: `For any questions about these terms, contact us at ${SITE.email} or ${SITE.phone}.`,
+    p: `For any questions about these terms, contact us at ${SITE.phone} or via WhatsApp.`,
   },
 ];
 

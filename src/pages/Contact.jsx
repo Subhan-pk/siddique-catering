@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {
-  FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock,
+  FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt,
   FaFacebookF, FaInstagram,
 } from "react-icons/fa";
 import PageHero from "../components/PageHero";
@@ -12,11 +12,8 @@ import { SITE, whatsappLink } from "../data/site";
 const HERO = "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1600&q=70";
 
 const CARDS = [
-  { icon: FaPhoneAlt, title: "Phone", value: SITE.phone, href: SITE.phoneHref, note: "Call us anytime during working hours" },
+  { icon: FaPhoneAlt, title: "Phone", value: SITE.phone, href: SITE.phoneHref, note: "Call us anytime" },
   { icon: FaWhatsapp, title: "WhatsApp", value: "Message us instantly", href: whatsappLink(), note: "Fastest way to reach our team" },
-  { icon: FaEnvelope, title: "Email", value: SITE.email, href: `mailto:${SITE.email}`, note: "We reply within 24 hours" },
-  { icon: FaMapMarkerAlt, title: "Address", value: SITE.address, note: "Visit us for a menu tasting" },
-  { icon: FaClock, title: "Working Hours", value: SITE.hours, note: "Open all week for your events" },
 ];
 
 export default function Contact() {

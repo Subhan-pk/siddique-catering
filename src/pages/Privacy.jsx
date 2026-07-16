@@ -25,7 +25,7 @@ const SECTIONS = [
   },
   {
     h: "Contact",
-    p: `If you have any questions about this Privacy Policy, please contact us at ${SITE.email} or call ${SITE.phone}.`,
+    p: `If you have any questions about this Privacy Policy, please call us at ${SITE.phone} or reach out via WhatsApp.`,
   },
 ];
 

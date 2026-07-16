@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaClock } from "react-icons/fa";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import BookingForm from "../components/BookingForm";
@@ -10,8 +10,6 @@ const HERO = "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=
 const CONTACTS = [
   { icon: FaPhoneAlt, label: "Call Us", value: SITE.phone, href: SITE.phoneHref },
   { icon: FaWhatsapp, label: "WhatsApp", value: "Chat with our team", href: whatsappLink() },
-  { icon: FaEnvelope, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
-  { icon: FaClock, label: "Working Hours", value: SITE.hours },
 ];
 
 export default function Book() {

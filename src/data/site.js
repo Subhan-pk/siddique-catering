@@ -1,4 +1,4 @@
-// Central business info. Items marked TODO are placeholders — replace with real details.
+// Central business info.
 export const SITE = {
   name: "Siddique Sons Catering Services",
   shortName: "Siddique Sons",
@@ -6,9 +6,6 @@ export const SITE = {
   phone: "+92 300 2822252",
   phoneHref: "tel:+923002822252",
   whatsapp: "923002822252",
-  email: "info@siddiquesons.com", // TODO: replace with real email
-  address: "Main Boulevard, Your City, Pakistan", // TODO: replace with real address
-  hours: "Mon – Sun: 9:00 AM – 10:00 PM",
   facebook: "https://www.facebook.com/SiddiqueSonsCaterers/",
   instagram: "https://www.instagram.com/siddique_sons_caterers/",
   instagramHandle: "@siddique_sons_caterers",

@@ -1,13 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaWhatsapp,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaClock,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { SITE, whatsappLink } from "../data/site";
 import { SERVICES } from "../data/services";
 
@@ -95,16 +87,10 @@ export default function Footer() {
               <a href={SITE.phoneHref} className="hover:text-gold">{SITE.phone}</a>
             </li>
             <li className="flex items-start gap-3">
-              <FaEnvelope className="mt-1 shrink-0 text-gold" />
-              <a href={`mailto:${SITE.email}`} className="hover:text-gold">{SITE.email}</a>
-            </li>
-            <li className="flex items-start gap-3">
-              <FaMapMarkerAlt className="mt-1 shrink-0 text-gold" />
-              <span>{SITE.address}</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <FaClock className="mt-1 shrink-0 text-gold" />
-              <span>{SITE.hours}</span>
+              <FaWhatsapp className="mt-1 shrink-0 text-gold" />
+              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+                Chat on WhatsApp
+              </a>
             </li>
           </ul>
         </div>
