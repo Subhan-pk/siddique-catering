@@ -26,20 +26,24 @@ function Field({ label, error, children, htmlFor }) {
   );
 }
 
+const buildInquiryMessage = (data) =>
+  `Booking inquiry:\nName: ${data.name}\nPhone: ${data.phone}\nEvent: ${data.eventType} on ${data.eventDate}\nGuests: ${data.guests}\nLocation: ${data.location}\nCatering type: ${data.cateringType}\nBudget: ${data.budget || "—"}\nMessage: ${data.message || "—"}`;
+
 export default function BookingForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
   const [submitted, setSubmitted] = useState(null);
 
   const onSubmit = async (data) => {
-    // No backend yet — simulate a short delay, then show success and offer WhatsApp handoff.
+    // No backend yet — open WhatsApp with the details pre-filled immediately, while
+    // this still counts as part of the user's click (otherwise browsers block the popup).
+    window.open(whatsappLink(buildInquiryMessage(data)), "_blank", "noopener,noreferrer");
     await new Promise((r) => setTimeout(r, 900));
     setSubmitted(data);
     reset();
   };
 
   if (submitted) {
-    const msg =
-      `Booking inquiry:\nName: ${submitted.name}\nPhone: ${submitted.phone}\nEvent: ${submitted.eventType} on ${submitted.eventDate}\nGuests: ${submitted.guests}\nLocation: ${submitted.location}\nCatering type: ${submitted.cateringType}\nBudget: ${submitted.budget || "—"}\nMessage: ${submitted.message || "—"}`;
+    const msg = buildInquiryMessage(submitted);
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -50,7 +54,8 @@ export default function BookingForm() {
         <FaCheckCircle className="text-6xl text-green-500" aria-hidden="true" />
         <h3 className="mt-5 font-display text-2xl font-bold text-maroon-deep">Thank You, {submitted.name}!</h3>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-charcoal/70">
-          Your booking inquiry has been received. Our team will contact you shortly
+          We've opened WhatsApp with your event details pre-filled — just hit{" "}
+          <strong>Send</strong> there to reach our team instantly. We'll get back to you
           at <strong>{submitted.phone}</strong> with a customized quotation.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-3">
@@ -60,7 +65,7 @@ export default function BookingForm() {
             rel="noopener noreferrer"
             className="rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-md transition-transform hover:-translate-y-0.5"
           >
-            Send Details on WhatsApp
+            WhatsApp Didn't Open? Tap Here
           </a>
           <button
             onClick={() => setSubmitted(null)}
