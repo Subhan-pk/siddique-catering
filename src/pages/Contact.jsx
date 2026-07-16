@@ -7,13 +7,14 @@ import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
 import Reveal from "../components/Reveal";
 import CTASection from "../components/CTASection";
-import { SITE, whatsappLink } from "../data/site";
+import { SITE, whatsappLink, mapEmbedSrc, mapDirectionsLink } from "../data/site";
 
 const HERO = "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1600&q=70";
 
 const CARDS = [
   { icon: FaPhoneAlt, title: "Phone", value: SITE.phone, href: SITE.phoneHref, note: "Call us anytime" },
   { icon: FaWhatsapp, title: "WhatsApp", value: "Message us instantly", href: whatsappLink(), note: "Fastest way to reach our team" },
+  { icon: FaMapMarkerAlt, title: "Address", value: SITE.address, href: mapDirectionsLink, note: "Get directions" },
 ];
 
 export default function Contact() {
@@ -31,7 +32,7 @@ export default function Contact() {
           <SectionHeading
             eyebrow="Get In Touch"
             title="We'd Love to Hear From You"
-            subtitle="Reach us by phone, WhatsApp, or email — or drop by for a tasting."
+            subtitle="Reach us by phone or WhatsApp — or drop by for a tasting."
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {CARDS.map((c, i) => {
@@ -79,16 +80,23 @@ export default function Contact() {
             </Reveal>
           </div>
 
-          {/* Map placeholder */}
+          {/* Map */}
           <Reveal className="mt-14">
-            <div className="flex min-h-[320px] flex-col items-center justify-center rounded-3xl border-2 border-dashed border-maroon/25 bg-white/60 p-10 text-center">
-              <FaMapMarkerAlt className="text-5xl text-maroon/40" aria-hidden="true" />
-              <p className="mt-4 font-display text-xl font-bold text-maroon-deep">Google Map</p>
-              <p className="mt-2 max-w-md text-sm text-charcoal/60">
-                Map embed placeholder — add your Google Maps embed once the business
-                address is confirmed.
-              </p>
+            <div className="overflow-hidden rounded-3xl shadow-xl">
+              <iframe
+                title="Siddique Sons Catering Services location"
+                src={mapEmbedSrc}
+                className="h-[380px] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
+            <p className="mt-4 text-center text-sm text-charcoal/60">
+              {SITE.address} —{" "}
+              <a href={mapDirectionsLink} target="_blank" rel="noopener noreferrer" className="font-semibold text-maroon hover:text-gold hover:underline">
+                Get Directions
+              </a>
+            </p>
           </Reveal>
 
           <Reveal className="mt-14 text-center">

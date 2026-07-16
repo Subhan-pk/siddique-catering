@@ -6,6 +6,7 @@ export const SITE = {
   phone: "+92 300 2822252",
   phoneHref: "tel:+923002822252",
   whatsapp: "923002822252",
+  address: "Zam Zam Plaza, Main Market Gulberg, 28-E Main Market Rd, near MCB Bank, Main Market, Lahore, 54660, Pakistan",
   facebook: "https://www.facebook.com/SiddiqueSonsCaterers/",
   instagram: "https://www.instagram.com/siddique_sons_caterers/",
   instagramHandle: "@siddique_sons_caterers",
@@ -13,6 +14,9 @@ export const SITE = {
 
 export const whatsappLink = (message = "Hello! I would like to inquire about your catering services.") =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`;
+
+export const mapEmbedSrc = `https://www.google.com/maps?q=${encodeURIComponent(SITE.address)}&output=embed`;
+export const mapDirectionsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.address)}`;
 
 export const STATS = [
   { value: 500, suffix: "+", label: "Events Served" },

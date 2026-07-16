@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
-import { SITE, whatsappLink } from "../data/site";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { SITE, whatsappLink, mapDirectionsLink } from "../data/site";
 import { SERVICES } from "../data/services";
 
 const quickLinks = [
@@ -90,6 +90,12 @@ export default function Footer() {
               <FaWhatsapp className="mt-1 shrink-0 text-gold" />
               <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
                 Chat on WhatsApp
+              </a>
+            </li>
+            <li className="flex items-start gap-3">
+              <FaMapMarkerAlt className="mt-1 shrink-0 text-gold" />
+              <a href={mapDirectionsLink} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
+                {SITE.address}
               </a>
             </li>
           </ul>
